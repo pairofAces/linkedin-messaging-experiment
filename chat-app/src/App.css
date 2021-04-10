@@ -238,3 +238,15 @@ padding-top: 4px;
     outline: none;
     margin-bottom: 25px;
 }
+
+.form {
+    width: 400px;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    width: 100%;
+    font-size: 2.3em;
+}
