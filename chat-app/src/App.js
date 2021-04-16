@@ -3,6 +3,11 @@
 
  const App = () => {
     return (
-        <ChatEngine />
+        <ChatEngine 
+            height="100vh"
+            projectID=""
+            userName=""
+            userSecret=""
+        />
     )
  };
