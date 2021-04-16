@@ -8,6 +8,7 @@
             projectID="cb3f0dee-0d92-43eb-baad-f7af7a9ce23c"
             userName="chatTest"
             userSecret="123"
+            renderChatFeed={() => <ChatFeed />}
         />
     )
  };
