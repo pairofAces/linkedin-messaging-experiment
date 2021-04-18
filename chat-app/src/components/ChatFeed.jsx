@@ -10,6 +10,12 @@ const ChatFeed = (props) => {
     // create a chat variable, IF it exists, as well as the activeChat
     const chat = chats && chats[activeChat]
     
+    // console.log(chat, userName, messages)
+
+    const renderMessages = () => {
+
+    }
+    
     return (
         <div>
             ChatFeed
