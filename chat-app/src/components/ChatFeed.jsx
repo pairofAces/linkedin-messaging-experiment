@@ -30,7 +30,14 @@ const ChatFeed = (props) => {
                 <div key={`msg_${index}`} style={{ width: '100%' }}>
                     {/* create another div for the message itself */}
                     <div className="message-block">
-                        
+                        {
+                            isMyMessage ? <MyMessage /> : <TheirMessage />
+                        }
+
+                        {/* create another div, to contain the read-receipts */}
+                        <div className="read-receipts" style={{ marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px'}}>
+                            read-receipts
+                        </div>
                     </div>
                 </div>
             )
