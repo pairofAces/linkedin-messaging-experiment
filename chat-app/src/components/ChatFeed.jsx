@@ -44,12 +44,29 @@ const ChatFeed = (props) => {
         })
     }
 
-    // call renderMessages
-    renderMessages();
+    // call renderMessages -> removed b/c I'm invoking it within the 
+    // return statement below
+    // renderMessages();
+
+    // in case there is no (chat)
+    if (!chat) return "Loading..."
 
     return (
-        <div>
-            ChatFeed
+        // create the container divs for chat feed and title
+        <div className="chat-feed">
+            <div className="chat-title-container">
+                <div className="chat-title">{chat?.title}</div>
+                <div className="chat-subtitle">
+                    {chat.people.map((person) => `${person.person.username}`)}
+                </div>
+            </div>
+
+            {/* render messages here */}
+            {renderMessages()}
+
+            <div style={{ height: '100px' }}/>
+
+            {/* create the messaging form below */}
         </div>
     )
 }
