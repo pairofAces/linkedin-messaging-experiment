@@ -31,7 +31,7 @@ const ChatFeed = (props) => {
                     {/* create another div for the message itself */}
                     <div className="message-block">
                         {
-                            isMyMessage ? <MyMessage /> : <TheirMessage />
+                            isMyMessage ? <MyMessage message={message} /> : <TheirMessage message={message} lastMessage={messages[lastMessageKey]}/>
                         }
 
                         {/* create another div, to contain the read-receipts */}
@@ -67,6 +67,9 @@ const ChatFeed = (props) => {
             <div style={{ height: '100px' }}/>
 
             {/* create the messaging form below */}
+            <div className="message-form-container">
+                <MessageForm {...props} chatId={activeChat}/>
+            </div>
         </div>
     )
 }
