@@ -1,13 +1,23 @@
 import { useState } from 'react';
+import { sendMessage, isTyping } from 'react-chat-engine';
 
-const MessageForm = () => {
+const MessageForm = (props) => {
+    const [value, setValue] = useState('');
+
+    const { chatId, creds } = props;
 
     submitHandler = () => {
         // need to work on this 
     }
 
-    changeHandler = () => {
+    changeHandler = (e) => {
         // need to create this
+        setValue(e.target.value);
+
+        isTyping(props, chatId);
+
+
+
     }
 
     return (
@@ -17,6 +27,7 @@ const MessageForm = () => {
                 placeholder="Send a message ..."
                 value={value}
                 onChange={changeHandler}
+                onSubmit={submitHandler}
             />
         </form>
     )
