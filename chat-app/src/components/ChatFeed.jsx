@@ -31,11 +31,19 @@ const ChatFeed = (props) => {
                     {/* create another div for the message itself */}
                     <div className="message-block">
                         {
-                            isMyMessage ? <MyMessage message={message} /> : <TheirMessage message={message} lastMessage={messages[lastMessageKey]}/>
+                            isMyMessage 
+                            ? <MyMessage message={message} /> 
+                            : <TheirMessage message={message} lastMessage={messages[lastMessageKey]}/>
                         }
 
                         {/* create another div, to contain the read-receipts */}
-                        <div className="read-receipts" style={{ marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px'}}>
+                        <div 
+                            className="read-receipts" 
+                            style={{ 
+                                marginRight: isMyMessage ? '18px' : '0px', 
+                                marginLeft: isMyMessage ? '0px' : '68px'
+                            }}
+                        >
                             read-receipts
                         </div>
                     </div>
