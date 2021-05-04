@@ -6,8 +6,19 @@ const MessageForm = (props) => {
 
     const { chatId, creds } = props;
 
-    submitHandler = () => {
+    submitHandler = (e) => {
         // need to work on this 
+        e.preventDefault();
+
+        const text = value.trim();
+
+        if (text.length > 0) {
+            sendMessage(creds, chatId, { text });
+        }
+
+        // after sending the message, reset the value in the message bar
+        // back to an empty string
+        setValue('')
     }
 
     changeHandler = (e) => {
