@@ -7,7 +7,7 @@ const MessageForm = (props) => {
 
     const { chatId, creds } = props;
 
-    submitHandler = (e) => {
+    const submitHandler = (e) => {
         // need to work on this 
         e.preventDefault();
 
@@ -22,14 +22,15 @@ const MessageForm = (props) => {
         setValue('')
     }
 
-    changeHandler = (e) => {
+    const changeHandler = (e) => {
         // need to create this
         setValue(e.target.value);
 
         isTyping(props, chatId);
+    }
 
-
-
+    const uploadHandler = (e) => {
+        sendMessage(creds, chatId, { files: e.target.files, text: '' });
     }
 
     return (
@@ -47,6 +48,18 @@ const MessageForm = (props) => {
                     <PictureOutlined className="picture-icon"/>
                 </span>
             </label>
+
+            <input 
+                type="file"
+                multiple={false}
+                id="upload-button"
+                style={{ display: 'none' }}
+                onChange={uploadHandler}
+            />
+
+            <button type="submit" className="send-button">
+                <SendOutlined className="send-icon"/>
+            </button>
         </form>
     )
 }
