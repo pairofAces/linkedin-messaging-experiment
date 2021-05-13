@@ -19,6 +19,9 @@ const LoginForm = () => {
             localStorage.setItem('username', username);
             localStorage.setItem('password', password);
             
+            // after setting the username/password, reload the present page
+            window.location.reload();
+
         } catch (error) {
             // otherwise, if there's an error -> user should try with a new username...
 
@@ -43,3 +46,5 @@ const LoginForm = () => {
         </div>
     );
 }
+
+export default LoginForm;

@@ -1,8 +1,16 @@
- import { ChatEngine } from 'react-chat-engine';
- import './App.css';
- import ChatFeed from './components/ChatFeed';
+import { ChatEngine } from 'react-chat-engine';
+import './App.css';
+import ChatFeed from './components/ChatFeed';
+import LoginForm from './components/LoginForm';
 
  const App = () => {
+
+    // render the  ChatEngine, if the user is logged in, 
+    // IF NOT, render a registration form
+    if (!localStorage.getItem('username')) {
+        return <LoginForm />
+    }
+
     return (
         <ChatEngine 
             height="100vh"
