@@ -25,7 +25,7 @@ const LoginForm = () => {
 
         } catch (error) {
             // otherwise, if there's an error -> user should try with a new username...
-
+            setError('Looks like you entered incorrect information')
         }
 
     };
@@ -42,6 +42,8 @@ const LoginForm = () => {
                             <span>Start Chatting</span>
                         </button>
                     </div>
+                    {/* render the error messages */}
+                    <h2 className="error">{error}</h2>
                 </form>
             </div>
         </div>

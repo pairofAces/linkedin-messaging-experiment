@@ -15,8 +15,8 @@ import LoginForm from './components/LoginForm';
         <ChatEngine 
             height="100vh"
             projectID="cb3f0dee-0d92-43eb-baad-f7af7a9ce23c"
-            userName="chatTest"
-            userSecret="123"
+            userName={localStorage.getItem('username')}
+            userSecret={localStorage.getItem('password')}
             renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps}/>}
         />
 
