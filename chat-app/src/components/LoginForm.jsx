@@ -4,6 +4,7 @@ import axios from ' axios';
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const submitHandler = async (e) => {
         e.preventDefault();
